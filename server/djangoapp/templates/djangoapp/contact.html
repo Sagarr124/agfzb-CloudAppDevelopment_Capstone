@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% load static %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 </head>
-    <body>
-    <!-- Add Navbar -->
+<body>
+    <!--Add a nav bar here -->
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -36,32 +43,21 @@
         </div>
     </nav>
 
-    <!--Add a registration form here -->
-    <form action="{% url 'djangoapp:registration' %}" method="post">
-        <div class="container"> 
-          {% csrf_token %}
-          <h1>Sign Up</h1>
-          <hr>
-          <div class="form-group"> 
-              <label for="username"><b>Username:</b></label>
-              <input type="text" class="form-control" placeholder="Enter Username..." name="username" required> <br>
-              <label for="firstname"><b>First Name:</b></label>
-              <input type="text" class="form-control" placeholder="Enter your First Name..." name="firstname" required> <br> 
-              <label for="lastname"><b>Last Name:</b></label>
-              <input type="text" class="form-control" placeholder="Enter your Last Name..." name="lastname" required> <br>
-              <label for="psw"><b>Password:</b></label>
-              <input type="password" class="form-control" placeholder="Enter Password..." name="psw" required> <br>
-              {% if message %}
-              <div class="alert alert-warning"> 
-                  {{ message }}
-              </div>
-              {% endif %}
-              <button class="btn btn-primary" type="submit">Sign up</button> 
-          </div>
+    <!-- Content -->
+    <br>
+    <div class="container">
+        <div class="page-header">
+          <h1>Contact</h1>      
         </div>
-      </form>
+        <hr>
+        <p>Office : New York, NY 10012, US</p>
+        <p>Email : bestcar@dealership.com</p>
+        <p>Telphone : + 01 234 567 88</p>
+        <p>Fax : + 01 234 567 89</p>   
+    </div>
 
-      <footer class="navbar navbar-light bg-light" style="margin-top:15px; bottom:0; width:100%">
+    <!-- Footer Navbar -->
+    <footer class="navbar navbar-light bg-light" style="margin-top:15px; bottom:0; width:100%">
         <div class="container-fluid">
             <div class="navbar-header">
               <a class="navbar-brand" href="{% url 'djangoapp:contact' %}">Contact Us</a>
@@ -71,5 +67,5 @@
             </div>
         </div>
     </footer>
-    </body>
+</body>
 </html>
